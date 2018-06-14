@@ -39,3 +39,16 @@ $ git push 如果当前分支与多个主机存在追踪关系，那么这个时
 $ git push -u origin master 上面命令将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。
 
 不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。
+
+要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git
+	例如：$ git remote add origin git@github.com:xl695703025/learngit.git
+	或者$git remote add origin https://github.com/xl695703025/learngit.git
+
+$ git clone git@github.com:michaelliao/gitskills.git 将远程库克隆到本地
+例如: $ git clone git@github.com:xl695703025/gitskills.git
+或$git clone https://github.com/xl695703025/gitclone
+
+注意:git支持多种协议，默认git://，也可以使用https等其他协议，但是使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。
+
+总结：Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
+
