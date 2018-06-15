@@ -52,3 +52,10 @@ $ git clone git@github.com:michaelliao/gitskills.git 将远程库克隆到本地
 
 总结：Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
 
+$git checkout -b dev 创建新的分支dev，并且切换到dev
+等同于：
+$git branch dev
+$git checkout dev
+
+$git branch 查看分支
+
