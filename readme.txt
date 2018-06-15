@@ -63,8 +63,38 @@ $git branch <name> 查看分支
 $git merge <name> 合并分支,合并指定分支到当前分支。
 --no-ff  该参数可以使用普通模式合并，通常情况是Fast forward模式。
 
-$git branch -d <name>删除分支
+$git branch -d <name>删除分支 -D强行删除
 
 $git log --graph 合并分支图
 
+$git stash 可以把当前工作现场“储藏”起来
+
+$git stash list  查看储藏的内容
+
+$git stash apply 恢复
+$git stash drop 删除
+$git stash pop 恢复并删除
+
+多人协作的工作模式通常是这样：
+1.首先，可以试图用git push origin <branch-name>推送自己的修改；
+2.如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+3.如果合并有冲突，则解决冲突，并在本地提交；
+4.没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
+5.如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>。
+这就是多人协作的工作模式，一旦熟悉了，就非常简单
+
+查看远程库信息，使用$ git remote -v
+
+$git tag <tagname>  打标签
+$git tag <tagname> <commitid> 根据commitid打标签
+
+$git show <tagname>查看标签信息
+
+$ git tag -a v0.1 -m "version 0.1 released" 1094adb // -a指定标签名  -m指定说明文字
+
+$git tag 查看所有标签
+
+$ git tag -d <tagname>  删除标签
+
+$git push orign <tagname> 推送tag
 
