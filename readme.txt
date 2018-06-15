@@ -55,11 +55,13 @@ $ git clone git@github.com:michaelliao/gitskills.git 将远程库克隆到本地
 $git checkout -b dev 创建新的分支dev，并且切换到dev
 等同于：
 $git branch dev 创建分支
+
 $git checkout dev 切换分支
 
 $git branch <name> 查看分支
 
 $git merge <name> 合并分支,合并指定分支到当前分支。
+--no-ff  该参数可以使用普通模式合并，通常情况是Fast forward模式。
 
 $git branch -d <name>删除分支
 
